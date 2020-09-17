@@ -3,19 +3,12 @@ import Pet from "./Pet";
 
 import { useFeatureData } from "./feature/FeatureContext";
 import { petTextBuilder } from "./feature/PetTextFeature";
-import { toggleThemeClassWithFeatures } from "./feature/ThemeFeature";
 
 const Results = ({ pets }) => {
   const [features] = useFeatureData();
 
-  function closeModal() {
-    setShowModal(false);
-  }
-
   return (
-    <div
-      className={toggleThemeClassWithFeatures(features, "search-hw", "search")}
-    >
+    <div className="search">
       {!pets.length
         ? petTextBuilder(features)
         : pets.map(pet => {

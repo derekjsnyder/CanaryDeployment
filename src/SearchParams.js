@@ -2,12 +2,9 @@ import React, { useState, useEffect } from "react";
 import pet, { ANIMALS } from "@frontendmasters/pet";
 import useDropdown from "./useDropdown";
 import Results from "./Results";
-import {useFeatureData} from "./feature/FeatureContext";
-import ResultToggle from './ResultToggle';
-import {toggleThemeClassWithFeatures } from './feature/ThemeFeature';
+import ResultToggle from "./ResultToggle";
 
 const SearchParams = () => {
-  const [features,  ] = useFeatureData();
   const [location, updateLocation] = useState("Seattle, WA");
   const [breeds, updateBreeds] = useState([]);
   const [pets, setPets] = useState([]);
@@ -36,29 +33,29 @@ const SearchParams = () => {
 
   return (
     <>
-    <div className={toggleThemeClassWithFeatures((features), "search-params-hw", "search-params")}>
-      <form
-        onSubmit={e => {
-          e.preventDefault();
-          requestPets();
-        }}
-      >
-        <label htmlFor="location">
-          Location
-          <input
-            id="location"
-            value={location}
-            placeholder="Location"
-            onChange={e => updateLocation(e.target.value)}
-          />
-        </label>
-        <AnimalDropdown />
-        <BreedDropdown />
-        <button>Submit</button>
-      </form>
-      <Results pets={pets} />
-    </div>
-    <ResultToggle />
+      <div className="search-params">
+        <form
+          onSubmit={e => {
+            e.preventDefault();
+            requestPets();
+          }}
+        >
+          <label htmlFor="location">
+            Location
+            <input
+              id="location"
+              value={location}
+              placeholder="Location"
+              onChange={e => updateLocation(e.target.value)}
+            />
+          </label>
+          <AnimalDropdown />
+          <BreedDropdown />
+          <button>Submit</button>
+        </form>
+        <Results pets={pets} />
+      </div>
+      <ResultToggle />
     </>
   );
 };

@@ -4,7 +4,6 @@ import { navigate } from "@reach/router";
 import Carousel from "./Carousel";
 import Modal from "./Modal";
 import ErrorBoundary from "./ErrorBoundary";
-import { toggleThemeClass } from './feature/ThemeFeature';
 
 class Details extends React.Component {
   state = { loading: true, showModal: false };
@@ -45,7 +44,7 @@ class Details extends React.Component {
     } = this.state;
 
     return (
-      <div className={toggleThemeClass(this.props.featureTheme, "details-hw", "details")}>
+      <div className="details">
         <Carousel media={media} featureTheme={this.props.featureTheme} />
         <div>
           <h1>{name}</h1>
@@ -62,9 +61,7 @@ class Details extends React.Component {
               <h1>Would you like to adopt {name}?</h1>
               <div className="buttons">
                 <button onClick={this.adopt}>Yes</button>
-                <button onClick={this.toggleModal}>
-                  No, I am a monster
-                </button>
+                <button onClick={this.toggleModal}>No, I am a monster</button>
               </div>
             </Modal>
           ) : null}

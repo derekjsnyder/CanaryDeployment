@@ -2,6 +2,7 @@ import axios from "axios";
 import { uuidv4 } from "../Helper";
 
 function baseAzureTableApi(table, index = "") {
+  var storageToken = process.env.STORAGE_TOKEN;
   return `https://clinicalabdatadev.table.core.windows.net/${table}${index}${
     process.env.STORAGE_TOKEN
   }`;

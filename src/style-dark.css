@@ -19,6 +19,10 @@ body {
   margin-bottom: 25px;
 }
 
+.admin-header {
+  text-align: center;
+}
+
 .flex-outer li,
 .flex-inner {
   display: flex;
@@ -62,7 +66,7 @@ body {
 }
 
 .search-params form {
-  background-color: #d9c148;
+  background-color: #006272;
   width: 360px;
   margin: 0px 25px 0px 0px;
   padding: 35px 15px 15px 15px;
@@ -71,7 +75,7 @@ body {
 }
 
 .search {
-  background-color: #d9c148;
+  background-color: #006272;
   width: 715px;
   padding: 15px;
   border-radius: 9px;
@@ -79,10 +83,14 @@ body {
   margin-bottom: 25px;
 }
 
+.search h1 {
+  color: white;
+}
+
 .details {
   width: 1100px;
   margin: 0 auto;
-  background-color: #d9c148;
+  background-color: #006272;
   padding: 15px;
   border-radius: 9px;
   margin-bottom: 25px;
@@ -94,7 +102,7 @@ body {
   display: block;
   overflow: hidden;
   margin: 25px 0;
-  border-bottom: #bf9b2f 1px solid;
+  border-bottom: #aae2d0 1px solid;
 }
 
 .pet img {
@@ -123,7 +131,7 @@ body {
   white-space: nowrap;
   font-weight: normal;
   font-size: 30px;
-  color: #bf3334;
+  color: white;
   width: 95%;
   overflow: hidden;
   margin: 0;
@@ -146,6 +154,7 @@ header > a,
   font-size: 20px;
   margin: 0;
   text-overflow: ellipsis;
+  color: #dd372f;
 }
 
 header a {
@@ -169,11 +178,12 @@ header {
 .details p {
   line-height: 1.5;
   padding: 0px 15px;
+  color: #aae2d0;
 }
 
 .details h1 {
   text-align: center;
-  color: #bf3334;
+  color: #f4f4f4;
   font-size: 60px;
   margin: 5px 0px;
 }
@@ -181,6 +191,7 @@ header {
 .details h2 {
   text-align: center;
   margin: 5px 0px 20px 0px;
+  color: #aae2d0;
 }
 
 .carousel {
@@ -218,6 +229,7 @@ header {
 .search-params label {
   display: block;
   width: 60px;
+  color: white;
 }
 
 .search-params input,
@@ -231,7 +243,7 @@ header {
 .search-params button,
 #modal button,
 .details button {
-  background-color: #ad343e;
+  background-color: #a03123;
   padding: 5px 25px;
   color: white;
   font-size: 18px;
@@ -240,6 +252,15 @@ header {
   display: block;
   margin: 0 auto;
   cursor: pointer;
+}
+
+#modal .close-modal-button {
+  margin-left: 15px;
+  font-size: 10px;
+  color: black;
+  border: none;
+  background-color: transparent;
+  text-decoration: underline;
 }
 
 .search-params button:hover {
@@ -252,9 +273,6 @@ header {
 
 .search-params button:focus {
   border: 1px solid cornflowerblue;
-}
-
-.feedback-form {
 }
 
 .feedback-form label {
@@ -296,15 +314,6 @@ header {
 #modal .buttons button {
   display: inline-block;
   margin-right: 15px;
-}
-
-#modal .close-modal-button {
-  margin-left: 15px;
-  font-size: 10px;
-  color: black;
-  border: none;
-  background-color: transparent;
-  text-decoration: underline;
 }
 
 @media only screen and (max-width: 1129px) {
@@ -389,10 +398,4 @@ header {
     width: 60px;
     height: 60px;
   }
-}
-
-.search-toggle {
-  width: 715px;
-  padding: 15px;
-  float: left;
 }
