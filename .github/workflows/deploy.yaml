@@ -4,9 +4,11 @@ on:
   push:
     branches:
       - master
+      - canary
   pull_request:
     branches:
       - master
+      - canary
 
 jobs:
   build:
@@ -41,4 +43,13 @@ jobs:
         with:
           enabled-static-website: 'true'
           folder: 'dist'
-          connection-string: ${{ secrets.CONNECTION_STRING }}
+          connection-string: ${{ secrets.CONNECTION_STRING_BLUE }}
+
+      - name: 'Canary Deploy'
+        if: github.ref == 'refs/heads/canary' && github.event_name == 'push'
+        uses: lauchacarro/Azure-Storage-Action@v1.0
+        with:
+          enabled-static-website: 'true'
+          folder: 'dist'
+          connection-string: ${{ secrets.CONNECTION_STRING_GREEN }}
+
